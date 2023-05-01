@@ -11,7 +11,7 @@ const Header = () => {
   let activeStyle = {
     textDecoration: "underline",
     textDecorationColor:"black",
-    color:"red"
+    color:"blue"
   };
 
   const [open , setOpen] = useState(false);
@@ -19,7 +19,7 @@ const Header = () => {
   const handleMouseEnter = event => {
     setDelayHandler(setTimeout(() => {
       setOpen(false)
-    }, 1000))
+    }, 2000))
 };
 
 const handleMouseEnternew = event => {
@@ -30,15 +30,16 @@ const handleMouseEnternew = event => {
 
   return (
     <div>
+      
       <div className='bg-gradient-to-br
-                    from-blue-400 to-sky-950 h-14 flex justify-evenly items-center w-full'>
+                    from-blue-400 to-sky-950 h-14 flex justify-evenly items-center w-full rounded-bl-full'>
             <div className='md:flex hidden items-center justify-center gap-3'>
               <TbPhoneCall className=' text-white text-lg'/>
-              <p className=' text-white'>Emergency : 9434052889</p>
+              <p className=' text-white font-display'>Emergency : 9434052889</p>
             </div>
             <div className='md:flex hidden items-center justify-center gap-3'>
             <FaAmbulance className=' text-white text-lg'/>
-              <p className=' text-white'>Ambulance & Enquiry : 8170007650</p>
+              <p className=' text-white font-display'>Ambulance & Enquiry : 8170007650</p>
             </div>
             <div className='flex items-center justify-center gap-4'>
               <ul className=' flex flex-row items-center justify-center gap-4'>
@@ -68,29 +69,29 @@ const handleMouseEnternew = event => {
       </div>
     <div className=' p-1'>
 		<div className=' w-full p-3 px-0 m-auto'>
-			<div className=' md:flex justify-between text-center md:pt-2 p-6 gap-5'>
+			<div className=' md:flex justify-between text-center md:pt-2 p-2 gap-5'>
 				<div className=' p-2 flex justify-center items-center' >
-					<a href="/"><img src="/images/logo.png" alt="" className='max-w-[200px]'/></a>
+					<a href="/"><img src="/images/logo.png" alt="" className='max-w-[230px]'/></a>
 				</div>
-				<div className=' flex items-center justify-center p-2' >
+				<div className=' md:flex items-center justify-center p-2 hidden' >
 					<img src="/images/iconfirst.png" alt="" className='max-w-[30px] m-2' />
-					<p className=' pl-3 text-base font-normal text-black m-0'>Call to schedule your appointment!<br/>
-					<strong>8170007650 </strong></p>
+					<p className=' pl-3 text-base text-black m-0 font-display'>Call to schedule your appointment!<br/>
+					<p className='text-sky-700 font-display'>8170007650 </p></p>
 				</div>
-				<div className=' flex items-center justify-center p-2'>
+				<div className=' md:flex items-center justify-center p-2 hidden'>
 					<img src="/images/icon-2.png" alt="" className=' max-w-[30px] m-2'/>
-					<p className=' pl-3 text-base font-normal text-black m-0'>3/150, K J Sanyal Road, Mokdumpur, English<br/>
-					<strong>Bazar,Malda-732103 </strong></p>
+					<p className=' pl-3 text-base font-display text-black m-0'>3/150, K J Sanyal Road, Mokdumpur, English<br/>
+					<p className='text-sky-700 font-display'>Bazar,Malda-732103 </p></p>
 				</div>
-        <div className=' md:hidden flex items-center justify-center gap-3 p-2'>
+        <div className=' md:hidden hidden  items-center justify-center gap-3 p-2'>
               <TbPhoneCall className='text-lg m-2'/>
-              <p className=' pl-3 text-base font-normal text-black m-0'>Emergency :<strong> 9434052889</strong></p>
+              <p className=' pl-3 text-base font-display text-black m-0'>Emergency :<strong> 9434052889</strong></p>
             </div>
-            <div className=' md:hidden flex items-center justify-center gap-3 p-2'>
+            <div className=' md:hidden hidden items-center justify-center gap-3 p-2'>
             <FaAmbulance className='m-2 text-lg text-gray-800'/>
-              <p className=' pl-3 text-base font-normal text-black m-0'>Ambulance & Enquiry :<strong>8170007650</strong></p>
+              <p className=' pl-3 text-base font-display text-black m-0'>Ambulance & Enquiry :<strong>8170007650</strong></p>
             </div>
-				<div className='p-2 flex justify-center items-center'>
+				<div className='p-2 md:flex justify-center items-center hidden'>
 					<img src="/images/logo-2.png" alt="" className=' max-w-[170px]' />
 				</div>
 			</div>
@@ -98,12 +99,12 @@ const handleMouseEnternew = event => {
 	</div>
     
 
-  <div className=' p-5 shadow-lg '>
+  <div className='w-full'>
       <BrowserRouter >
-          <div className=' w-full p-4 flex justify-center items-center gap-14 relative' >
+          <div className=' w-full p-2 flex justify-center items-center gap-4 relative ' >
            
-              <ul className=' hidden md:flex w-full items-center justify-between text-lg font-medium capitalize p-5 shadow-lg m-4 border border-gray-300'>
-                  <li className=' hover:text-blue-700'><NavLink to='/home' style={({ isActive }) =>isActive ? activeStyle : undefined}>Home</NavLink></li>
+              <ul className=' hidden md:flex w-full items-center justify-center gap-10 text-lg font-display capitalize '>
+                  <li className=' hover:text-blue-700'><NavLink to='/' style={({ isActive }) =>isActive ? activeStyle : undefined}>Home</NavLink></li>
                   <li className=' hover:text-blue-700'><NavLink to='/about' style={({ isActive }) =>isActive ? activeStyle : undefined}>About us</NavLink></li>
                   <li className=' hover:text-blue-700'>
                   <motion.div className=' relative' >
@@ -162,7 +163,7 @@ const handleMouseEnternew = event => {
                    <button  onMouseEnter={() => setOpen(true)}
                            
                            onMouseLeave={handleMouseEnter }
-                           className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out'
+                           className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-display duration-100 ease-in-out'
                            onClick={()=> setIsMenu(false)}
                    >Online Booking</button>
                     
@@ -186,10 +187,11 @@ const handleMouseEnternew = event => {
                     initial={{opacity:0 , translateX:-50}}
                     animate={{opacity:1 ,translateX:50}}
                     exit={{opacity:0,translateX:-50}}
-                  className="flex flex-col w-72 absolute top-40 left-48 bg-gradient-to-br
-                  from-blue-400 to-sky-950 gap-7 justify-evenly items-center rounded-lg p-5 ">
-                           <NavLink to='/patientLogin' className=' text-slate-100 font-semibold text-lg' onClick={()=>setOpen(false)}>OPD Booking</NavLink>
-                           <NavLink to='/CentreLogin'  className=' text-slate-100 font-semibold text-lg' onClick={()=>setOpen(false)}>Centre Login</NavLink>
+                    whileHover={()=>setOpen(true)}
+                  className="flex flex-col w-60 absolute top-64 left-96 bg-gradient-to-br
+                  from-blue-400 to-sky-950 gap-2 justify-evenly items-center rounded-lg p-3 z-30 ">
+                           <NavLink to='/patientLogin' className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>OPD Booking</NavLink>
+                           <NavLink to='/CentreLogin'  className=' text-slate-100 font-display text-lg w-full hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Centre Login</NavLink>
     
                          </motion.div> }
             
@@ -197,15 +199,15 @@ const handleMouseEnternew = event => {
                     initial={{opacity:0 , translateX:-50}}
                     animate={{opacity:1 ,translateX:50}}
                     exit={{opacity:0,translateX:-50}}
-                  className="flex flex-col w-56 absolute top-28 left-32 bg-gradient-to-br
-                  from-blue-400 to-sky-950 gap-7 justify-evenly items-center rounded-lg p-3 ">
-                           <NavLink to='/ipd' className=' text-slate-100 font-semibold text-lg' onClick={()=>setOpen(false)}>IPD</NavLink>
-                           <NavLink to='/diagnostic'  className=' text-slate-100 font-semibold text-lg' onClick={()=>setOpen(false)}>Dianostic</NavLink>
-                           <NavLink to='/opd'  className=' text-slate-100 font-semibold text-lg' onClick={()=>setOpen(false)}>OPD</NavLink>
+                  className="flex flex-col w-60 absolute top-64 left-80 bg-gradient-to-br
+                  from-blue-400 to-sky-950 gap-2 justify-evenly items-center rounded-lg p-3 z-30 ">
+                           <NavLink to='/ipd' className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>IPD</NavLink>
+                           <NavLink to='/diagnostic'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Dianostic</NavLink>
+                           <NavLink to='/opd'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>OPD</NavLink>
                          </motion.div> }
           <Routes>
 
-        <Route  path='/home' element={<Home/>}/>
+        <Route  path='/' element={<Home/>}/>
         <Route  path='/about' element={<About/>}/>
         <Route  path='/contactus' element={<Contact/>}/>
         <Route path='/media' element={<Media/>}/>

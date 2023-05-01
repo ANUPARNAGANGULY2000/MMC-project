@@ -3,7 +3,7 @@ import {motion} from 'framer-motion'
 
 const Career = () => {
   return (
-    <div>
+    <div className=' font-display'>
         <div className='relative'>
             <img src='/images/career.jpg' className=' w-full h-96' />
             <div className='absolute top-40 left-9 font-semibold text-white bg-gray-800

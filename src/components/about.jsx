@@ -3,8 +3,8 @@ import {Doctorslide} from './index'
 
 const About = () => {
   return (
-    <div>
-       <div className=' flex md:flex-row flex-col items-start justify-start w-full h-auto p-3 m-4'> 
+    <div className=' flex flex-col md:gap-14'>
+       <div className=' flex md:flex-row flex-col items-start justify-start w-full h-auto p-3 m-4 font-display'> 
        
             
              <div className=' flex flex-col md:w-1/2 w-full m-3 p-3'>
@@ -25,7 +25,10 @@ const About = () => {
             <div className='w-full flex justify-center items-center'><img src="/images/mmgabout2.jpg" alt='/' className='md:absolute md:z-[2] md:top-96 md:left-52' /></div>  
              </div>
              </div>
-            <Doctorslide/>
+             <div>
+             <Doctorslide/>
+             </div>
+            
              </div>
   )
 }

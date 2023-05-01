@@ -1,17 +1,17 @@
-import React from 'react'
+import React from 'react';
 import {FaFacebookF,FaTwitter,FaInstagram,FaLinkedinIn,FaYoutube} from 'react-icons/fa'
 import {GoTriangleRight} from 'react-icons/go';
 import {GrMail} from 'react-icons/gr';
 import {AiFillPhone} from 'react-icons/ai';
-import { NavLink,BrowserRouter } from 'react-router-dom';
+import { NavLink,BrowserRouter} from 'react-router-dom';
 
 const  Footer = () => {
   return (
-    <div className=' p-4 m-4 flex justify-between flex-col'>
+    <div className=' p-4 m-4 flex justify-between flex-col font-display'>
       <div className=' flex md:flex-row flex-col justify-evenly gap-3 shadow-lg border border-gray-200 p-5'>
         <div className=' md:w-1/4 w-full'>
             <span>
-                <h1 className=' text-xl font-semibold shadow-md'>Malda Medical Centre Pvt Ltd</h1>
+                <h1 className=' text-xl  shadow-md text-sky-800'>Malda Medical Centre Pvt Ltd</h1>
             </span>
             <br/>
             <br/>
@@ -48,23 +48,25 @@ const  Footer = () => {
 
         <div className=' flex flex-col justify-center items-center md:w-1/4 w-full'>
             <div>
-                  <span><h1  className=' text-xl font-semibold shadow-md'>Quick Links</h1></span>
+                  <span><h1  className=' text-xl text-sky-800 shadow-md'>Quick Links</h1></span>
                   <br/>
                   <br/>
             </div>
     
             <div>
                 <BrowserRouter>
+                <div>
                     <ul className=' flex flex-col justify-between items-baseline gap-4'>
-                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>Home</NavLink></li>
-                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>About Us</NavLink></li>
-                        <li className=' flex justify-center items-center gap-2  '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>Services</NavLink></li>
-                        <li className=' flex justify-center items-center gap-2  '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>Online Services</NavLink></li>
-                        <li className=' flex justify-center items-center gap-2  '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>Media</NavLink></li>
-                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>Career</NavLink></li>
-                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>Academics</NavLink></li>
-                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/home'>Contact Us</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/'>Home</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/about'>About Us</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2  '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/'>Services</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2  '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/'>Online Services</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2  '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/media'>Media</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/career'>Career</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/academics'>Academics</NavLink></li>
+                        <li className=' flex justify-center items-center gap-2 '><GoTriangleRight className=' text-indigo-800'/><NavLink to='/contactus'>Contact Us</NavLink></li>
                     </ul>
+                    </div>
                 </BrowserRouter>
                 
             </div>
@@ -72,7 +74,7 @@ const  Footer = () => {
 
         <div className=' md:w-1/4 w-full'>
                 <div>
-                        <span><h1  className=' text-xl font-semibold shadow-md'>Contact Info</h1></span>
+                        <span><h1  className=' text-xl text-sky-800 shadow-md'>Contact Info</h1></span>
                         <br/>
                         <br/>
                  </div>
@@ -83,12 +85,12 @@ const  Footer = () => {
                  <div>
                     <p className=' flex justify-center items-center gap-2 '><AiFillPhone 
                         className=' h-6 w-7 text-indigo-500'/>
-                        <a href="tel:+9434052889 ">9434052889</a>/<a href="tel:+9434052889 ">9434052889</a>
+                        <a href="tel:+9434052889 " className='text-sky-600'>9434052889</a>/<a href="tel:+9434052889 " className='text-sky-600'>9434052889</a>
                     </p>
                  </div>
                  <div>
                     <p className=' flex justify-center items-center gap-2 '>
-                        <GrMail className=' h-6 w-7 text-red-600'/><a href="mailto: maldamedical01@gmail.com ">maldamedical01@gmail.com</a>
+                        <GrMail className=' h-6 w-7 text-red-600'/><a href="mailto: maldamedical01@gmail.com " className='text-sky-600'>maldamedical01@gmail.com</a>
                     </p>
                  
                  </div>
@@ -96,35 +98,35 @@ const  Footer = () => {
 
         <div className=' md:w-1/4 w-full' >
                  <div>
-                        <span><h1  className=' text-xl font-semibold shadow-md'>Opening Hours</h1></span>
+                        <span><h1  className=' text-xl text-sky-800 shadow-md'>Opening Hours</h1></span>
                         <br/>
                         <br/>
                 
                   </div>
                   <div className=' flex flex-col items-center justify-center gap-3'>
                     <div>
-                        <h1 className=' underline p-2'>OPD Chambers</h1>
+                        <h1 className=' underline p-2 text-sky-600'>OPD Chambers</h1>
                         <div className=' flex justify-between gap-10 item-center'>
                              <p>Monday - Sunday</p>
                              <p>8am - 8pm</p> 
                         </div>
                     </div>
                     <div>
-                        <h1 className=' underline p-2'>CT Scan</h1>
+                        <h1 className=' underline p-2 text-sky-600'>CT Scan</h1>
                         <div className=' flex justify-between gap-9 item-center'>
                              <p>Monday - Sunday</p>
                              <p>24x7</p> 
                         </div>
                     </div>
                     <div>
-                        <h1 className=' underline p-2'>Indoor Services</h1>
+                        <h1 className=' underline p-2 text-sky-600'>Indoor Services</h1>
                         <div className=' flex justify-between gap-9 item-center'>
                              <p>Monday - Sunday</p>
                              <p>24x7</p> 
                         </div>
                      </div>
                      <div>
-                        <h1 className=' underline p-2'>Diagnostic Departments</h1>
+                        <h1 className=' underline p-2 text-sky-600'>Diagnostic Departments</h1>
                         <div className=' flex justify-between gap-10 item-center'>
                              <p>Monday - Sunday</p>
                              <p>7:00am - 7:00pm</p> 
@@ -135,7 +137,7 @@ const  Footer = () => {
       </div>
       </div>
       <div className='bg-gradient-to-br
-                    from-blue-400 to-sky-950 h-11 flex justify-center items-center w-full'>
+                    from-blue-400 to-sky-950 md:h-11 h-auto flex justify-center items-center w-full'>
             <span><p className=' text-base text-white'>Copyright 2023 Malda Medical Centre Pvt Ltd | All rights reserved | Made with heart by Grow Brand Tech</p></span>
       </div>
     </div>

@@ -28,8 +28,8 @@ const Doctorslide = () => {
   return (
     <div>
       <div className=' p-6 m-2 border border-gray-100 shadow-md'>
-        <h1 className='text-sky-950 text-5xl font-bold p-2 m-2'>Expericenced Doctors</h1>
-        <h3 className='text-black text-xl font-semibold  font-sans p-2 m-2'>Our doctors are specialized in respective fields and take utmost care of their<br/>
+        <h1 className='text-sky-950 text-5xl font-bold p-2 m-2 font-display'>Expericenced Doctors</h1>
+        <h3 className='text-black text-xl  font-sans p-2 m-2 font-display'>Our doctors are specialized in respective fields and take utmost care of their<br/>
         patients service of our doctors are well-appeciated widely.</h3>
       </div>
 
@@ -43,23 +43,23 @@ const Doctorslide = () => {
   
                     infinite={true}
                     autoPlay={true}
-                    autoPlaySpeed={5000}
+                    autoPlaySpeed={3000}
                     keyBoardControl={true}
                     customTransition="all .5"
-                transitionDuration={500}
+                transitionDuration={300}
                 containerClass="carousel-container"
                  removeArrowOnDeviceType={["tablet", "mobile"]}
                 
                 dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px">
                 {doctor && doctor.map((data , index)=> (
-                    <div className=' border border-gray-300 shadow-md'>
+                    <div className='shadow-md hover:border hover:border-black'>
                      <div key={data.id} className=' flex flex-col justify-center items-center'>
                         <img src={data.Image} alt='' className=' h-32 w-32 object-cover rounded-full m-4' />
-                        <h1 className='text-sky-800 font-semibold text-2xl p-3'>{data.name}</h1>
-                        <h3 className='font-semibold text-lg'>{data.degree}</h3>
-                        <h3 className='font-semibold text-lg text-sky-950'>{data.special}</h3>
-                        <h4 className='font-normal p-3 m-2 text-lg'>{data.description}</h4>
+                        <h1 className='text-sky-800 text-2xl p-3 font-display'>{data.name}</h1>
+                        <h3 className='text-lg font-display' >{data.degree}</h3>
+                        <h3 className=' text-lg text-sky-950 font-display'>{data.special}</h3>
+                        <h4 className='font-normal p-3 m-2 text-lg font-display'>{data.description}</h4>
                         <ul className=' flex flex-row items-center justify-center gap-4 p-5 m-4'>
                         <li>
                          <a href="https://www.facebook.com/maldamedical">

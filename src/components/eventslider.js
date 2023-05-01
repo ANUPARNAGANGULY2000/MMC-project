@@ -1,9 +1,9 @@
 import React from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {workexp} from './work';
+import {event} from './eventdata'
 
-const Workexperience = () => {
+const Eventslide = () => {
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -25,10 +25,10 @@ const Workexperience = () => {
       };
 
   return (
-    <div>
-      <div className=' p-6 m-2 border border-gray-100 shadow-md font-display'>
-        <h1 className='text-sky-950 text-5xl font-bold p-2 m-2'>Award winning patient care</h1>
-        <h3 className='text-black text-xl font-sans p-2 m-2'>with 24 hours emergency service</h3>
+    <div className=' p-3 m-2'>
+      <div className=' p-6 m-2 shadow-md'>
+        <h1 className='text-sky-950 text-5xl font-bold p-2 m-2 font-display'>Media & Events</h1>
+        
       </div>
 
       <div>
@@ -50,13 +50,14 @@ const Workexperience = () => {
                 
                 dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px">
-                {workexp && workexp.map((data , index)=> (
-                    <div className='shadow-md'>
+                {event && event.map((data , index)=> (
+                    <div className='shadow-md hover:border hover:border-black'>
                      <div key={data.id} className=' flex flex-col justify-center items-center'>
-                        <img src={data.Image} alt='' className=' h-32 w-32 object-cover rounded-full m-4' />
-                        <h1 className='text-sky-800 font-semibold text-2xl p-3 font-display'>{data.name}</h1>
+                        <img src={data.Image} alt='' className='md:w-[400px] md:h-[300px] w-[400px] h-[300] object-cover m-4' />
+                        <h1 className='text-sky-800 text-2xl p-3 font-display'>{data.name}</h1>
+                        <h3 className='text-lg font-display' >{data.date}</h3>
+                        <h3 className=' text-lg text-sky-950 font-display'>By: {data.by}</h3>
                         <h4 className='font-normal p-3 m-2 text-lg font-display'>{data.description}</h4>
-                       
                      </div>
                      
                     </div>
@@ -72,4 +73,4 @@ const Workexperience = () => {
   )
 }
 
-export default Workexperience;
+export default Eventslide

@@ -15,3 +15,4 @@ export {default as OPD} from './opd';
 export {default as Mediaslidernew} from './mediaslidernew';
 export {default as Career} from './career';
 export {default as Academic} from './academic';
+export {default as Eventslide} from './eventslider'

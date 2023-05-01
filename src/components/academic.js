@@ -4,7 +4,7 @@ import {academic} from './academicdata'
 const Academic = () => {
   return (
     <div>
-      <div className=' flex items-center flex-col justify-center w-full'>
+      <div className=' flex items-center flex-col justify-center w-full font-display'>
       
       <img src='/images/academic.jpg' className=' w-full h-96' />
       
@@ -13,9 +13,9 @@ const Academic = () => {
         {academic && academic.map((data , index)=> (
             <div className=' border border-gray-300 shadow-md hover:border-gray-900 py-3'>
             <div key={data.id} className=' flex flex-col justify-center items-center'>
-               <h1 className='text-sky-800 font-semibold text-2xl p-3'>{data.heading}</h1>
-               <h3 className='font-semibold text-lg'>start from: {data.date}</h3>
-               <h3 className='font-semibold text-lg text-sky-950'>{data.description}</h3>
+               <h1 className='text-sky-800 text-2xl p-3'>{data.heading}</h1>
+               <h3 className=' text-lg'>start from: {data.date}</h3>
+               <h3 className=' text-lg text-sky-950'>{data.description}</h3>
                
                
             </div>

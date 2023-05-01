@@ -6,8 +6,8 @@ import {motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <div>
-      <div className=' flex items-center flex-col justify-center w-full'>
+    <div className=' font-display'>
+      <div className=' flex items-center flex-col justify-center w-full font-display'>
       
       <img src='/images/contact.jpg' className=' w-full h-96' />
       </div>
@@ -17,21 +17,21 @@ const Contact = () => {
         <div><MdLocationPin className=' h-16 w-16 text-sky-950 m-2 '/></div>
          <div className=' flex flex-col'>
             <p className=' text-sky-950 text-2xl p-1 font-semibold'>Address</p>
-            <p className='p-1 m-1'>3/150, K J Sanyal Road, Mokdumpur, English Bazar,Malda-732103</p>
+            <p className='p-1 m-1 text-sky-700'>3/150, K J Sanyal Road, Mokdumpur, English Bazar,Malda-732103</p>
         </div>
         </div>
         <div className='flex border border-gray-300 md:shadow-lg shadow-md justify-center items-center md:w-1/3 w-full'>
         <div><MdPhoneIphone className=' h-16 w-16 text-sky-950 m-2 '/></div>
          <div className=' flex flex-col'>
             <p className=' text-sky-950 text-2xl p-1 font-semibold'>Contact Number</p>
-            <p className='p-1 m-1'><a href="tel:+9434052889 ">9434052889</a>/<a href="tel:+9434052889 ">9434052889</a></p>
+            <p className='p-1 m-1 text-sky-700'><a href="tel:+9434052889 ">9434052889</a>/<a href="tel:+9434052889 ">9434052889</a></p>
         </div>
         </div>
         <div className='flex border border-gray-300 md:shadow-lg shadow-md justify-center md:w-1/3 w-full'>
         <div><MdEmail className=' h-16 w-16 text-sky-950 m-2 '/></div>
          <div className=' flex flex-col justify-center items-center p-1 m-1'>
             <p className=' text-sky-950 text-2xl p-1 font-semibold'>Email</p>
-            <p className='p-1 m-1'><a href="mailto: maldamedical01@gmail.com ">maldamedical01@gmail.com</a></p>
+            <p className='p-1 m-1 text-sky-700'><a href="mailto: maldamedical01@gmail.com ">maldamedical01@gmail.com</a></p>
         </div>
     </div>
     </div>
