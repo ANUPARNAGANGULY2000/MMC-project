@@ -26,9 +26,9 @@ const Doctorslide = () => {
       };
 
   return (
-    <div>
-      <div className=' p-6 m-2 border border-gray-100 shadow-md'>
-        <h1 className='text-sky-950 text-5xl font-bold p-2 m-2 font-display'>Expericenced Doctors</h1>
+    <div className=' bg-white'>
+      <div className=' p-6 m-2 border border-gray-100 shadow-md '>
+        <h1 className='text-sky-950 md:text-5xl text-3xl font-bold p-2 m-2 font-display'>Expericenced Doctors</h1>
         <h3 className='text-black text-xl  font-sans p-2 m-2 font-display'>Our doctors are specialized in respective fields and take utmost care of their<br/>
         patients service of our doctors are well-appeciated widely.</h3>
       </div>

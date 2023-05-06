@@ -24,7 +24,7 @@ const Workexperience = () => {
       };
 
   return (
-    <div>
+    <div className='bg-white'>
       <div className=' p-6 m-2 border border-gray-100 shadow-md font-display'>
         <h1 className='text-sky-950 text-5xl font-bold p-2 m-2'>Award winning patient care</h1>
         <h3 className='text-black text-xl font-sans p-2 m-2'>with 24 hours emergency service</h3>

@@ -30,14 +30,15 @@ const Home = () => {
   }; 
   return (
     <div>
-      
-        <Mediaslidernew/>
+       <Mediaslidernew/>
     <div>
+      
+       
     
-    <div className=' flex md:flex-row flex-col justify-evenly gap-7 p-6 m-5'>
+    <div className=' flex md:flex-row flex-col justify-evenly gap-7 p-6 m-5' >
 
       
-      <div className=' flex flex-col border border-gray-300 shadow-2xl md:w-1/3 w-full rounded-sm'>
+      <div className=' flex flex-col border border-gray-300 shadow-2xl md:w-1/3 w-full rounded-sm bg-white'>
        
         <div><FaUserNurse className=' text-7xl  text-sky-950 m-8'/></div>
         <div>
@@ -59,7 +60,7 @@ const Home = () => {
           
         </div>
       </div>
-      <div className=' flex flex-col border border-gray-300 shadow-2xl md:w-1/3 w-full rounded-sm'>
+      <div className=' flex flex-col border border-gray-300 shadow-2xl md:w-1/3 w-full rounded-sm bg-white'>
        
         <div><FaRegClock className=' text-7xl  text-sky-950 m-8'/></div>
         <div>
@@ -81,7 +82,7 @@ const Home = () => {
           </div>
         </div>
       
-      <div className=' flex flex-col border border-gray-300 shadow-2xl md:w-1/3 w-full rounded-sm'>
+      <div className=' flex flex-col border border-gray-300 shadow-2xl md:w-1/3 w-full rounded-sm bg-white'>
        
         <div><MdOutlineSupportAgent className=' text-7xl  text-sky-950 m-8 flex md:justify-start md:items-start justify-center items-center'/></div>
         <div>
@@ -94,7 +95,7 @@ const Home = () => {
     </div>
     </div>
 
-    <div className=' flex md:flex-row flex-col items-start justify-start p-4 m-2'> 
+    <div className=' flex md:flex-row flex-col items-start justify-start p-4 m-2 bg-white'> 
       <div className=' md:w-1/2 w-full'><img src="/images/mmc-left.png" alt='/' /></div>
       <div className=' flex flex-col md:w-1/2 w-full'>
 
@@ -136,6 +137,10 @@ const Home = () => {
         </div>
         </div>
       </div>
+      <div >
+      <Doctorslide/>
+      <Workexperience/>
+      </div>
       <div className=' flex justify-evenly items-center bg-gradient-to-br
                     from-blue-400 to-sky-950 w-full md:flex-row flex-col'>
         <div className=' flex flex-col justify-center items-center w-full font-display'>
@@ -161,9 +166,8 @@ const Home = () => {
      
 
       <div>
-        <Eventslide/>
-        <Workexperience/>
-      <Doctorslide/>
+       
+      <Eventslide/>
       </div>
       
     </div>

@@ -25,7 +25,7 @@ const Eventslide = () => {
       };
 
   return (
-    <div className=' p-3 m-2'>
+    <div className=' p-3 m-2 bg-white'>
       <div className=' p-6 m-2 shadow-md'>
         <h1 className='text-sky-950 text-5xl font-bold p-2 m-2 font-display'>Media & Events</h1>
         

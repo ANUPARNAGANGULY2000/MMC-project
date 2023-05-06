@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import {Home,About,Contact,Media,PatientLogin,CenterLogin,FindDoctor,IPD,OPD,Diagnosis,Career,Academic} from './index'
+import {Home,About,Contact,Media,PatientLogin,CenterLogin,FindDoctor,IPD,OPD,Diagnosis,Career,Academic,Feedback} from './index'
 import {BrowserRouter,NavLink ,Route, Routes } from "react-router-dom";
-import {FaFacebookF,FaTwitter,FaInstagram,FaLinkedinIn,FaYoutube,FaAmbulance} from 'react-icons/fa'
+import {FaFacebookF,FaTwitter,FaInstagram,FaLinkedinIn,FaYoutube,FaAmbulance} from 'react-icons/fa';
+import {RxCross2} from 'react-icons/rx';
+import {IoMdArrowDropdown} from 'react-icons/io';
 import {TbPhoneCall} from 'react-icons/tb';
 import {motion} from 'framer-motion';
 import {AiOutlineMenu} from 'react-icons/ai';
@@ -15,7 +17,11 @@ const Header = () => {
   };
 
   const [open , setOpen] = useState(false);
+  const [isOpen, setIsOpen] =  useState(false);
   const [service,setService] = useState(false);
+  const [isService, setIsService]=useState(false);
+  const [doctor,setDoctor]= useState(false);
+  const [isDoctor,setIsDoctor] = useState(false);
   const handleMouseEnter = event => {
     setDelayHandler(setTimeout(() => {
       setOpen(false)
@@ -25,6 +31,12 @@ const Header = () => {
 const handleMouseEnternew = event => {
   setDelayHandler(setTimeout(() => {
     setService(false)
+  }, 2000))
+}
+
+const handledoctor = event => {
+  setDelayHandler(setTimeout(() => {
+    setDoctor(false)
   }, 2000))
 }
 
@@ -109,7 +121,12 @@ const handleMouseEnternew = event => {
                   <li className=' hover:text-blue-700'>
                   <motion.div className=' relative' >
                    
-                   <button  onMouseEnter={() => setService(true)}
+                   <button  onMouseEnter={() => 
+                   {
+                    setOpen(false);
+                    setDoctor(false);
+                    setService(true);
+                  }}
                            
                            onMouseLeave={handleMouseEnternew}
                    >Service</button>
@@ -120,7 +137,11 @@ const handleMouseEnternew = event => {
                   <li className=' hover:text-blue-700'>
                    <motion.div className=' relative' >
                    
-                    <button  onMouseEnter={() => setOpen(true)}
+                    <button  onMouseEnter={() => {
+                      setService(false);
+                      setDoctor(false);
+                      setOpen(true);
+                    }}
                             
                             onMouseLeave={handleMouseEnter }
                     >Online Booking</button>
@@ -131,11 +152,29 @@ const handleMouseEnternew = event => {
                   <li className=' hover:text-blue-700'><NavLink to='/media' style={({ isActive }) =>isActive ? activeStyle : undefined}>Media</NavLink></li>
                   <li className=' hover:text-blue-700'><NavLink to='/career'style={({ isActive }) =>isActive ? activeStyle : undefined}>Career</NavLink></li>
                   <li className=' hover:text-blue-700'><NavLink to='/academics' style={({ isActive }) =>isActive ? activeStyle : undefined}>Academics</NavLink></li>
-                  <li className=' hover:text-blue-700'><NavLink to='/contactus' style={({ isActive }) =>isActive ? activeStyle : undefined}>Contact us</NavLink></li>
-                  <li className=' hover:text-blue-700'><NavLink to='/doctorfind' style={({ isActive }) =>isActive ? activeStyle : undefined}>FIND A DOCTOR</NavLink></li>
-              </ul>
+                  <li className=' hover:text-blue-700'>
+                  <motion.div className=' relative' >
+                   
+                   <button  onMouseEnter={() => 
+                   {
+                    setOpen(false);
+                    setService(false);
+                    setDoctor(true);
+                  }}
+                           
+                           onMouseLeave={handledoctor}
+                   >FIND A DOCTOR</button>
+                    
+                   
+                   </motion.div> 
+                    </li>
+                    
+                    <li className=' hover:text-blue-700'><NavLink to='/contactus' style={({ isActive }) =>isActive ? activeStyle : undefined}>Contact us</NavLink></li>
+                    <li className=' hover:text-blue-700'><NavLink to='/feedback' style={({ isActive }) =>isActive ? activeStyle : undefined}>Feedback</NavLink></li>
+                    </ul>
+             
               <div className=' block md:hidden ml-auto cursor-pointer'>
-                    <AiOutlineMenu className=' text-3xl text-gray-950' onClick={() => setIsMenu(!isMenu)}/>
+                  <AiOutlineMenu className=' text-3xl text-gray-950' onClick={() => setIsMenu(!isMenu)}/>
                 </div>
                 {isMenu &&  (
                     <motion.div
@@ -144,36 +183,65 @@ const handleMouseEnternew = event => {
                     exit={{opacity:0,translateX:-50}}
                     
                      className=' flex flex-col w-72 -top-24 right-28 bg-gradient-to-br
-                     from-blue-400 to-sky-950 gap-7 justify-evenly items-center rounded-lg p-5 absolute z-20'>
+                     from-blue-400 to-sky-950 gap-7 font-display justify-evenly items-center rounded-lg p-5 absolute z-20'>
                         
-                        <NavLink to='/home' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' onClick={()=> setIsMenu(false)}>Home</NavLink>
-                        <NavLink to='/about' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' onClick={()=> setIsMenu(false)}>About us</NavLink>
-                        <motion.div className=' relative' >
+                        <div className='relative'><RxCross2 onClick={()=> setIsMenu(false)} className="text-white font-bold text-xl absolute left-20"/></div>
+                        <NavLink to='/' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' >Home</NavLink>
+                        <NavLink to='/about' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out'>About us</NavLink>
+                        <motion.div className=' relative overflow-hidden' >
                    
-                        <button  onMouseEnter={() => setService(true)}
+                        <button  
                            
-                           onMouseLeave={handleMouseEnternew}
-                           className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out'
-                        >Service</button>
+                         
+                           className=' text-2xl flex items-center justify-between text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out'
+                        >Service <IoMdArrowDropdown onClick={()=>setIsService(!isService)}/></button>
                     
+                    {isService && <div 
+                  className="flex flex-col  gap-2 justify-evenly items-center rounded-lg">
+                           <NavLink to='/ipd' className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>IPD</NavLink>
+                           <NavLink to='/diagnostic'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Dianostic</NavLink>
+                           <NavLink to='/opd'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>OPD</NavLink>
+                         </div>}
                    
                    </motion.div> 
-                   <motion.div className=' relative' >
+                   <motion.div className=' relative overflow-hidden' >
                    
-                   <button  onMouseEnter={() => setOpen(true)}
-                           
-                           onMouseLeave={handleMouseEnter }
-                           className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-display duration-100 ease-in-out'
-                           onClick={()=> setIsMenu(false)}
-                   >Online Booking</button>
+                   <button 
+                           className=' text-2xl flex items-center justify-between text-slate-300 hover:text-slate-50 cursor-pointer font-display duration-100 ease-in-out'
+                   >Online Booking <IoMdArrowDropdown onClick={()=>setIsOpen(!isOpen)}/></button>
                     
+                    {isOpen && <div 
+                   
+                   
+                  className="flex flex-col  gap-2 justify-evenly items-center rounded-lg">
+                           <NavLink to='/patientLogin' className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>OPD Booking</NavLink>
+                           <NavLink to='/CentreLogin'  className=' text-slate-100 font-display text-lg w-full hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Centre Login</NavLink>
+    
+                         </div> }
                    
                    </motion.div> 
                    <NavLink to='/media' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' onClick={()=> setIsMenu(false)} onChange={()=> setIsMenu(false)}>Media</NavLink>
                   <NavLink to='/career'style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' onClick={()=> setIsMenu(false)} onChange={()=> setIsMenu(false)}>Career</NavLink>
                  <NavLink to='/academics' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' onClick={()=> setIsMenu(false)} onChange={()=> setIsMenu(false)}>Academics</NavLink>
                 <NavLink to='/contactus' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' onClick={()=> setIsMenu(false)} onChange={()=> setIsMenu(false)}>Contact us</NavLink>
-                <NavLink to='/doctorfind' style={({ isActive }) =>isActive ? activeStyle : undefined} className=' text-2xl  text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out' onClick={()=> setIsMenu(false)} onChange={()=> setIsMenu(false)}>FIND A DOCTOR</NavLink>
+                <motion.div className=' relative overflow-hidden' >
+                   
+                   <button  
+                      
+                    
+                      className=' text-2xl flex items-center justify-between text-slate-300 hover:text-slate-50 cursor-pointer font-medium duration-100 ease-in-out'
+                   >Find Doctor<IoMdArrowDropdown onClick={()=>setIsDoctor(!isDoctor)}/></button>
+               
+               {isDoctor && <div 
+             className="flex flex-col  gap-2 justify-evenly items-center rounded-lg">
+                       <NavLink to='/doctorfind'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Malda</NavLink>
+                        <NavLink to='/doctorfind'   className=' text-slate-100 font-display text-lg w-full hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Chanchol</NavLink>
+                     
+                    </div>}
+              
+              </motion.div> 
+                   
+                   
                     </motion.div>
 
                 )}
@@ -205,6 +273,18 @@ const handleMouseEnternew = event => {
                            <NavLink to='/diagnostic'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Dianostic</NavLink>
                            <NavLink to='/opd'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>OPD</NavLink>
                          </motion.div> }
+
+                         {doctor && <motion.div 
+                    initial={{opacity:0 , translateX:-50}}
+                    animate={{opacity:1 ,translateX:50}}
+                    exit={{opacity:0,translateX:-50}}
+                   
+                  className="flex flex-col w-60 absolute top-64 right-96 bg-gradient-to-br
+                  from-blue-400 to-sky-950 gap-2 justify-evenly items-center rounded-lg p-3 z-30 ">
+                           <NavLink to='/doctorfind'  className=' text-slate-100 font-display w-full text-lg hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Malda</NavLink>
+                           <NavLink to='/doctorfind'   className=' text-slate-100 font-display text-lg w-full hover:bg-slate-100 hover:text-black' onClick={()=>setOpen(false)}>Chanchol</NavLink>
+    
+                         </motion.div> }
           <Routes>
 
         <Route  path='/' element={<Home/>}/>
@@ -219,6 +299,7 @@ const handleMouseEnternew = event => {
         <Route path='/opd' element={<OPD/>}/>
         <Route path='/career' element={<Career/>}/>
         <Route path='/academics' element={<Academic/>}/>
+        <Route path='/feedback' element={<Feedback/>}/>
 
 
 
